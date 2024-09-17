@@ -5,27 +5,25 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'prettier'],
   extends: [
-    'plugin:@typescript-eslint/recommended', // Recomendações do TypeScript
-    'plugin:prettier/recommended', // Integração com Prettier
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
   root: true,
   env: {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js'], // Ignora este arquivo de configuração
+  ignorePatterns: ['.eslintrc.js', 'dist', 'node_modules'],
   rules: {
-    // Regras do TypeScript
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-
-    // Integração com o Prettier
-    'prettier/prettier': ['error', {
-      endOfLine: 'auto', // Evita problemas de fim de linha entre sistemas operacionais
-    }],
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-namespace': 'off'
   },
 };
